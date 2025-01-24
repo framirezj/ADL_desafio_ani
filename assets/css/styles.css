@@ -31,6 +31,7 @@ header {
   padding: 0 1rem 0 1rem;
   position: sticky;
   top: 0;
+  z-index: 9;
   background-color: white;
   border-bottom: 1px solid #dcbdff;
 }
@@ -115,6 +116,7 @@ main {
   align-items: center;
   text-align: center;
   gap: 1rem;
+  padding-top: 1rem;
   padding-bottom: 1rem;
 }
 
@@ -122,17 +124,56 @@ main {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  padding-left: 1rem;
 }
+
+/* card */
 
 .card {
-  border: 1px solid #ccc;
+  border: 1px solid #dcbdff;
   border-radius: 0.5rem;
   overflow: hidden; /* Asegura que los bordes redondeados sean visibles */
+  transition: all 0.3s ease;
 }
 
-.card img {
-  width: 100%;
+.imagen-card{
+  flex: 3;
+  overflow: hidden; /* Asegura que el texto se mantenga visible encima de la imagen */
+}
+
+.description h2, .description p{
+  margin: 0;
+  padding: 0;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0.5rem 0 1rem 0;
+  background-color: white;
+  flex: 1;
+  z-index: 2; /* Asegura que el texto se mantenga visible encima de la imagen */
+  position: relative; /* Necesario para que el z-index funcione correctamente */
+}
+
+ .imagen-card img {
+  max-width: 100%;
   height: auto;
+  overflow: hidden;
+  transition: transform 0.3s ease; 
+  transform-origin: top center;
+  object-fit: contain; 
+}
+
+ .card:hover {
+  transform: translateY(-5px) scale(1) rotate(1deg);
+  box-shadow: 0 8px 16px rgba(220, 189, 255, 0.9);
+  border: 1px solid #ffc17d;
+}
+
+.card:hover img {
+  transform: scale(1.5) rotate(-2deg); 
 }
 
 main ul {
