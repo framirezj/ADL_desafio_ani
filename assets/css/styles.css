@@ -202,7 +202,7 @@ main ul li a {
 /* footer */
 
 footer {
-  background-image: url("/assets/img/footer.jpg");
+  background-image: url("../img/footer.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   color: white;
@@ -275,6 +275,7 @@ footer p {
     color: #ffc17d;
   }
 
+
   .cards {
     display: flex;
     flex-direction: row;
@@ -286,5 +287,6 @@ footer p {
 
     max-height: 100vh;
     overflow-y: auto;
+    
   }
 }
